@@ -108,9 +108,8 @@ html[data-theme="dark"] .b2 { background: radial-gradient(circle, #15302c, trans
 }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo {
-  width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center;
-  background: var(--deep); color: #f4f8fa; font-family: var(--serif); font-size: 16px;
-  line-height: 1; transition: transform .5s var(--ease);
+  width: 28px; height: 28px; border-radius: 8px; display: block;
+  object-fit: contain; flex: none; transition: transform .5s var(--ease);
 }
 .site-head.scrolled .logo { transform: scale(.94); }
 .brand b { font-size: 15px; font-weight: 600; letter-spacing: .14em; }
