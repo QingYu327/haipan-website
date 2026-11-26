@@ -57,7 +57,7 @@
     font-family:var(--sans);font-size:16px;line-height:1.7;
     -webkit-font-smoothing:antialiased;overflow-x:hidden;
     transition:background-color .5s var(--ease),color .5s var(--ease);
-    padding-top:64px;
+    padding-top:82px;
   }
   .wrap{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 28px}
   a{color:inherit}
@@ -84,12 +84,12 @@
 
   /* ── 顶栏：滚动收缩成悬浮胶囊（对齐 DeepSeek）── */
   header{position:fixed;top:0;left:0;right:0;z-index:40;
-    display:flex;justify-content:center;padding:8px 18px 0;pointer-events:none}
+    display:flex;justify-content:center;padding:10px 20px 0;pointer-events:none}
   .nav{
     pointer-events:auto;
-    width:100%;max-width:1140px;height:48px;
+    width:100%;max-width:1140px;height:64px;
     display:flex;align-items:center;justify-content:space-between;
-    padding:0 8px 0 16px;border-radius:100px;
+    padding:0 10px 0 20px;border-radius:100px;
     background:rgba(255,255,255,0);border:1px solid transparent;
     transition:max-width .5s var(--ease),background-color .3s ease,
       border-color .3s ease,backdrop-filter .3s ease,box-shadow .4s ease,
@@ -97,32 +97,32 @@
   }
   html[data-theme="dark"] header .nav{background:rgba(21,32,38,0)}
   header.scrolled .nav{
-    max-width:860px;padding:0 8px 0 14px;
+    max-width:980px;padding:0 10px 0 18px;
     background:var(--glass);
     -webkit-backdrop-filter:blur(12px) saturate(150%);
     backdrop-filter:blur(12px) saturate(150%);
     border-color:var(--glass-line);
     box-shadow:0 14px 34px -26px rgba(30,44,53,.6);
   }
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .logo{width:28px;height:28px;border-radius:8px;display:block;
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo{width:32px;height:32px;border-radius:9px;display:block;
     transition:transform .5s var(--ease)}
   header.scrolled .logo{transform:scale(.94)}
-  .brand b{font-family:var(--sans);font-weight:600;font-size:15px;
-    letter-spacing:.14em;color:var(--ink)}
-  .tools{display:flex;align-items:center;gap:6px}
-  .gh{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);
+  .brand b{font-family:var(--sans);font-weight:600;font-size:18px;
+    letter-spacing:.12em;color:var(--ink)}
+  .tools{display:flex;align-items:center;gap:8px;margin-left:4px}
+  .gh{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);
     border-radius:999px;background:var(--card);color:var(--ink-2);text-decoration:none;
     transition:background .3s,color .3s,border-color .3s,transform .4s var(--ease)}
   .gh:hover{color:var(--deep);border-color:var(--blue);transform:translateY(-1px)}
-  .gh svg{width:18px;height:18px}
+  .gh svg{width:19px;height:19px}
   .theme{
-    position:relative;width:38px;height:38px;display:grid;place-items:center;
+    position:relative;width:42px;height:42px;display:grid;place-items:center;
     border:1px solid var(--line);border-radius:999px;background:var(--card);
     color:var(--ink-2);cursor:pointer;padding:0;
     transition:background .3s,color .3s,border-color .3s,transform .5s var(--ease)}
   .theme:hover{color:var(--deep);border-color:var(--blue);transform:rotate(18deg)}
-  .theme svg{width:18px;height:18px;position:absolute;
+  .theme svg{width:19px;height:19px;position:absolute;
     transition:opacity .35s var(--ease),transform .5s var(--ease)}
   .theme .sun{opacity:0;transform:scale(.6) rotate(40deg)}
   .theme .moon{opacity:1;transform:none}
@@ -374,11 +374,11 @@
   }
   /* 手机 */
   @media (max-width:700px){
-    body{padding-top:58px}
+    body{padding-top:72px}
     .wrap{padding:0 18px}
-    .nav{height:44px;padding:0 6px 0 12px}
-    header{padding:7px 12px 0}
-    .brand b{font-size:14px}
+    .nav{height:56px;padding:0 6px 0 14px}
+    header{padding:8px 12px 0}
+    .brand b{font-size:16px}
     .hero{padding:40px 0 0}
     .hero .sub{font-size:14.5px}
     .acts{gap:10px}
@@ -397,11 +397,11 @@
     border-radius:999px;background:var(--deep);color:#fff;text-decoration:none;
     font-size:13px;transition:top .25s var(--ease)}
   .skip:focus{top:10px}
-  .navlinks{display:flex;align-items:center;gap:2px}
-  .navlinks a{position:relative;padding:8px 11px;border-radius:999px;font-size:13px;
-    color:var(--ink-2);text-decoration:none;letter-spacing:.01em;
+  .navlinks{display:flex;align-items:center;gap:4px;margin-left:auto}
+  .navlinks a{position:relative;padding:10px 15px;border-radius:999px;font-size:14.5px;
+    color:var(--ink-2);text-decoration:none;letter-spacing:.02em;
     transition:color .25s,background-color .25s}
-  .navlinks a::after{content:"";position:absolute;left:11px;right:11px;bottom:4px;
+  .navlinks a::after{content:"";position:absolute;left:15px;right:15px;bottom:6px;
     height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;
     opacity:.6;transition:transform .35s var(--ease)}
   .navlinks a:hover{color:var(--ink);background:rgba(53,103,143,.06)}
@@ -469,16 +469,16 @@
   ::view-transition-new(root){z-index:2}
 
   /* ── 移动端菜单 ── */
-  .menu-btn{display:none;width:38px;height:38px;place-items:center;border:1px solid var(--line);
+  .menu-btn{display:none;width:42px;height:42px;place-items:center;border:1px solid var(--line);
     border-radius:999px;background:var(--card);color:var(--ink-2);cursor:pointer;padding:0;
     transition:color .3s,border-color .3s,transform .4s var(--ease)}
   .menu-btn:hover{color:var(--deep);border-color:var(--blue)}
-  .menu-btn svg{width:18px;height:18px}
+  .menu-btn svg{width:19px;height:19px}
   .menu-btn .close{display:none}
   .menu-btn[aria-expanded="true"] .open{display:none}
   .menu-btn[aria-expanded="true"] .close{display:block}
   .mobile-menu{position:fixed;inset:0;z-index:39;display:flex;flex-direction:column;
-    justify-content:space-between;padding:84px 24px 28px;
+    justify-content:space-between;padding:100px 24px 28px;
     background:var(--paper);opacity:0;visibility:hidden;transform:translateY(-10px);
     transition:opacity .35s var(--ease),transform .45s var(--ease),visibility .35s}
   .mobile-menu.open{opacity:1;visibility:visible;transform:none}
