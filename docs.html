@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用文档 · 海畔</title>
+<meta name="description" content="海畔课表 APP 使用文档：安装更新、首次登录、课表、成绩与考试、空教室、提醒与校外访问。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23234b69'/%3E%3Ctext x='32' y='43' font-family='serif' font-size='34' fill='%23f4f8fa' text-anchor='middle'%3E%E6%B5%B7%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/pages.css">
+<script>
+  try {
+    var t = localStorage.getItem('hp-theme');
+    if (t) document.documentElement.dataset.theme = t;
+    else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+  } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span></div>
+
+<header class="site-head" id="hdr">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">海</span><b>海畔</b></a>
+    <nav class="links" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="docs.html" aria-current="page">使用文档</a>
+      <a href="notes.html">注意事项</a>
+    </nav>
+    <div class="tools">
+      <a class="icon" href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener" aria-label="GitHub 仓库">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+      </a>
+      <button class="icon" id="themeBtn" aria-label="切换明暗模式" title="切换明暗模式">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20 14.4A8.2 8.2 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="doc-hero">
+    <div class="wrap reveal">
+      <div class="crumbs"><a href="index.html">海畔</a><span>/</span><span>使用文档</span></div>
+      <span class="kicker">GUIDE</span>
+      <h1>把课表用顺，<br>只要几分钟。</h1>
+      <p class="lead">从安装、登录到课表、成绩、考试与空教室，按顺序看一遍即可。遇到问题先看最后的常见问题。</p>
+      <div class="chips"><span>v1.0.1+4144</span><span>Android</span><span>8 个章节</span></div>
+    </div>
+  </section>
+
+  <div class="shell">
+    <aside class="toc" aria-label="文档目录">
+      <div class="toc-title">目录</div>
+      <a href="#install" class="active">01 安装与更新</a>
+      <a href="#login">02 首次登录</a>
+      <a href="#timetable">03 课表</a>
+      <a href="#grades">04 成绩与考试</a>
+      <a href="#rooms">05 空教室</a>
+      <a href="#alerts">06 提醒与组件</a>
+      <a href="#network">07 校外访问</a>
+      <a href="#faq">08 常见问题</a>
+    </aside>
+
+    <article class="doc">
+      <section class="doc-section" id="install">
+        <div class="sec-k">01</div>
+        <h2>安装与更新</h2>
+        <p>海畔目前提供 Android 安装包。下载、覆盖安装和版本更新都遵循同一套规则，不会动你的本地课表缓存。</p>
+        <ol class="steps">
+          <li><b>下载安装包</b><span>从官网下载区或 GitHub Releases 获取最新 APK；建议使用页面提供的镜像加速直链。</span></li>
+          <li><b>允许安装未知来源应用</b><span>系统会提示一次，授权后即可继续安装。</span></li>
+          <li><b>覆盖安装</b><span>新版本直接覆盖旧版本，课表缓存、设置与登录状态会保留。</span></li>
+        </ol>
+        <div class="callout tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b>只从官方渠道下载</b><br>请使用官网、GitHub Releases 或 Gitee 镜像。第三方站点重新打包的 APK 可能被篡改，也会因为签名不同而无法覆盖安装。</div>
+        </div>
+        <p>应用内也可以检查更新：进入「我的 → 检查更新」。版本号格式为 <b>1.0.1+构建号</b>，构建号更大的才是新版本。</p>
+      </section>
+
+      <section class="doc-section" id="login">
+        <div class="sec-k">02</div>
+        <h2>首次登录</h2>
+        <p>登录使用学校统一身份认证，过程在应用内的认证页完成，海畔不会绕过学校页面直接索取密码。</p>
+        <ol class="steps">
+          <li><b>优先连接校园网</b><span>校内网络会自动直连教务，速度最快，也不需要额外开通权限。</span></li>
+          <li><b>输入学号与密码</b><span>按认证页提示完成验证码、短信或企业微信等多因子步骤。</span></li>
+          <li><b>等待课表导入</b><span>首次登录会拉取课表与学籍信息，完成后进入首页。</span></li>
+        </ol>
+        <div class="callout warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
+          <div><b>公网通道需要开通</b><br>在校外使用公网通道前，需要联系管理员把学号加入准入名单；未开通时请先连接校园网登录。</div>
+        </div>
+        <h3>设备绑定</h3>
+        <p>首次登录会把学号与当前设备绑定。正常情况下换机后重新登录即可自动换绑；如果管理员关闭了自动换绑，需要先在网页端退出或联系管理员重置。</p>
+      </section>
+
+      <section class="doc-section" id="timetable">
+        <div class="sec-k">03</div>
+        <h2>课表</h2>
+        <p>首页默认展示当前学期的周课表。顶部可以切换周次、回到本周，也可以在学期之间切换。</p>
+        <h3>周次与学期</h3>
+        <p>应用会按开学时间估算当前周次；如果估算不准，手动切到正确周次即可。历史学期可以随时回看，但不会再显示日期标签。</p>
+        <h3>课程与实践课</h3>
+        <p>点击课程卡片可以查看课程名、教师、教室、节次与周次。没有固定节次的实践课会单独列在课表下方，不会硬塞进网格。</p>
+        <h3>离线缓存</h3>
+        <p>课表成功加载后会写入本地缓存。之后即使断网或认证过期，仍然可以打开上一版课表；下拉刷新会在网络恢复后重新同步。</p>
+        <div class="callout tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg>
+          <div><b>课程颜色</b><br>同一门课在整张课表里保持同一种颜色，方便快速扫视；换学期后颜色会重新分配。</div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="grades">
+        <div class="sec-k">04</div>
+        <h2>成绩与考试</h2>
+        <p>成绩页会把全学程成绩汇总成总览，再提供单科明细，避免在多个页面之间来回查找。</p>
+        <h3>成绩总览</h3>
+        <p>总览包含学分绩点、加权平均分、已获学分与通过率。点击学期可以跳到该学期的课程明细；课程性质与分数区间会以图表呈现。</p>
+        <h3>成绩明细</h3>
+        <p>支持按学期、课程性质、是否通过筛选，也可以按课程名、课程号或教师搜索。展开单科可以查看成绩构成；本地换算的绩点会标注「估算」。</p>
+        <h3>考试安排</h3>
+        <p>考试页按日期排列，显示剩余天数、起止时间、考场与座位号。考前提醒可以单独开启，不影响课程提醒。</p>
+      </section>
+
+      <section class="doc-section" id="rooms">
+        <div class="sec-k">05</div>
+        <h2>空教室</h2>
+        <p>空教室查询按校区、楼号、周次与节次组合筛选，适合临时找自习位置。</p>
+        <ol class="steps">
+          <li><b>选择查询条件</b><span>先选校区与楼号，再选周次和节次；条件越具体，结果越接近实际。</span></li>
+          <li><b>查看空闲结果</b><span>结果会区分可用与占用，并显示教室名称与容量等信息。</span></li>
+          <li><b>收藏常用教室</b><span>收藏后会排在结果前面，下次查询不用重新找。</span></li>
+        </ol>
+        <div class="callout warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
+          <div><b>以现场为准</b><br>空教室数据来自教务排课，临时调课、考试占用或教室关闭不会实时反映，出门前建议再确认一次。</div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="alerts">
+        <div class="sec-k">06</div>
+        <h2>提醒与桌面组件</h2>
+        <p>课程提醒依赖系统通知与精确闹钟，首次使用需要授予通知权限；Android 12 及以上还需要「闹钟与提醒」权限。</p>
+        <h3>课程提醒</h3>
+        <p>提醒按课表缓存提前调度，离线也会触发。点击通知会直接跳到对应课程。若系统开启了省电限制，提醒可能延迟，建议把海畔加入电池优化白名单。</p>
+        <h3>桌面组件</h3>
+        <p>提供今日课程与周课表两种组件。添加方式与普通 Android 桌面组件一致：长按桌面空白处 → 组件 → 海畔。</p>
+        <div class="callout tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg>
+          <div><b>组件不刷新？</b><br>先打开一次 App 让课表完成同步；部分系统会限制后台组件刷新，重新添加组件通常可以恢复。</div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="network">
+        <div class="sec-k">07</div>
+        <h2>校外访问</h2>
+        <p>海畔会自动判断当前网络。在校园网内直连教务；在校外时，如果已开通公网通道，会自动切换到加密中转通道。</p>
+        <dl class="kv">
+          <dt>校园网</dt><dd>直连，速度最快，推荐优先使用。</dd>
+          <dt>公网通道</dt><dd>需要管理员开通，速度受中转链路影响，适合临时查课表与成绩。</dd>
+          <dt>切换方式</dt><dd>自动探测，不需要手动设置；网络变化后会自动重连。</dd>
+        </dl>
+        <div class="callout warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
+          <div><b>公网通道不是万能入口</b><br>学校统一认证页在校外可能要求额外的多因子验证；如果一直失败，请回到校园网完成登录，或联系管理员确认准入状态。</div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="faq">
+        <div class="sec-k">08</div>
+        <h2>常见问题</h2>
+        <details class="faq" open>
+          <summary>登录一直失败，提示未开通或设备不匹配</summary>
+          <p>先确认是否在校园网。如果在校外，需要管理员把学号加入公网准入名单。提示设备不匹配时，说明该学号已绑定其他设备，需要管理员重置或等待自动换绑。</p>
+        </details>
+        <details class="faq">
+          <summary>课表是空的，或者周次对不上</summary>
+          <p>先在课表页下拉刷新。周次为空通常是开学时间估算偏差，手动切到正确周次即可。历史学期不显示日期属于正常现象。</p>
+        </details>
+        <details class="faq">
+          <summary>已经是最新版，为什么还提示更新</summary>
+          <p>请对照「我的 → 关于」里的构建版本与 Release 标签。若构建版本低于标签，说明安装包确实较旧；若完全一致仍提示，请通过意见反馈附上日志。</p>
+        </details>
+        <details class="faq">
+          <summary>换手机后需要重新登录吗</summary>
+          <p>需要。新设备首次登录会重新完成设备认证；本地缓存不会跨设备迁移，课表会重新从教务拉取。</p>
+        </details>
+        <details class="faq">
+          <summary>提醒不准时或没有声音</summary>
+          <p>检查通知权限、闹钟与提醒权限，以及系统省电策略。部分国产系统需要单独允许「自启动」和「后台运行」。</p>
+        </details>
+        <details class="faq">
+          <summary>怎么反馈问题</summary>
+          <p>进入「我的 → 意见反馈」，应用会导出日志并附到邮件里。也可以直接发邮件到 <a class="inline" href="mailto:xiuhong0327@163.com">xiuhong0327@163.com</a>。</p>
+        </details>
+      </section>
+    </article>
+  </div>
+
+  <nav class="page-next" aria-label="继续阅读">
+    <a class="next-card" href="index.html">
+      <small>BACK</small>
+      <b>返回官网</b>
+      <span>功能、下载与版本信息</span>
+    </a>
+    <a class="next-card right" href="notes.html">
+      <small>NEXT</small>
+      <b>注意事项</b>
+      <span>隐私、设备绑定与使用边界</span>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>海畔 1.0.1</span>
+    <span><a href="docs.html">使用文档</a> · <a href="notes.html">注意事项</a> · <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+  <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>
+</footer>
+
+<script src="assets/pages.js"></script>
+</body>
+</html>
