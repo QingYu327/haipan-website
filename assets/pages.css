@@ -1,5 +1,6 @@
 /* 海畔 · 文档页共享样式 */
 :root {
+  color-scheme: light;
   --paper: #f7f9fa;
   --paper-2: #eef4f7;
   --card: #ffffff;
@@ -20,6 +21,7 @@
   --ease: cubic-bezier(.22, .68, .16, 1);
 }
 html[data-theme="dark"] {
+  color-scheme: dark;
   --paper: #0f171d;
   --paper-2: #121c22;
   --card: #152026;
