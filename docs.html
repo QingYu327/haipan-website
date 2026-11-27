@@ -31,6 +31,10 @@
       <a href="notes.html">注意事项</a>
     </nav>
     <div class="tools">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
       <a class="icon" href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener" aria-label="GitHub 仓库">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
       </a>
@@ -42,6 +46,18 @@
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="m-nav" aria-label="移动端导航">
+    <a href="index.html"><span>首页</span><small aria-hidden="true">HOME</small></a>
+    <a href="docs.html" aria-current="page"><span>使用文档</span><small aria-hidden="true">GUIDE</small></a>
+    <a href="notes.html"><span>注意事项</span><small aria-hidden="true">NOTICE</small></a>
+  </nav>
+  <div class="m-foot">
+    <span>海畔 · Android 客户端</span>
+    <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div>
+
 <main id="main">
   <section class="doc-hero">
     <div class="wrap reveal">
@@ -49,7 +65,7 @@
       <span class="kicker">GUIDE</span>
       <h1>把课表用顺，<br>只要几分钟。</h1>
       <p class="lead">从安装、登录到课表、成绩、考试与空教室，按顺序看一遍即可。遇到问题先看最后的常见问题。</p>
-      <div class="chips"><span>v1.0.1+4144</span><span>Android</span><span>8 个章节</span></div>
+      <div class="chips"><span>Android</span><span>8 个章节</span><span>离线可用</span></div>
     </div>
   </section>
 
@@ -80,7 +96,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
           <div><b>只从官方渠道下载</b><br>请使用官网、GitHub Releases 或 Gitee 镜像。第三方站点重新打包的 APK 可能被篡改，也会因为签名不同而无法覆盖安装。</div>
         </div>
-        <p>应用内也可以检查更新：进入「我的 → 检查更新」。版本号格式为 <b>1.0.1+构建号</b>，构建号更大的才是新版本。</p>
+        <p>应用内也可以检查更新：进入「我的 → 检查更新」。版本号由「版本名 + 构建号」组成，构建号更大才是新版本；具体版本以应用内显示为准。</p>
       </section>
 
       <section class="doc-section" id="login">
@@ -219,7 +235,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span>海畔 1.0.1</span>
+    <span>海畔</span>
     <span><a href="docs.html">使用文档</a> · <a href="notes.html">注意事项</a> · <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a></span>
   </div>
   <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>

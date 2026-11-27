@@ -31,6 +31,10 @@
       <a href="notes.html" aria-current="page">注意事项</a>
     </nav>
     <div class="tools">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
       <a class="icon" href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener" aria-label="GitHub 仓库">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
       </a>
@@ -41,6 +45,18 @@
     </div>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="m-nav" aria-label="移动端导航">
+    <a href="index.html"><span>首页</span><small aria-hidden="true">HOME</small></a>
+    <a href="docs.html"><span>使用文档</span><small aria-hidden="true">GUIDE</small></a>
+    <a href="notes.html" aria-current="page"><span>注意事项</span><small aria-hidden="true">NOTICE</small></a>
+  </nav>
+  <div class="m-foot">
+    <span>海畔 · Android 客户端</span>
+    <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div>
 
 <main id="main">
   <section class="doc-hero">
@@ -138,7 +154,7 @@
         <h2>下载与更新</h2>
         <p>安装包只从官网、GitHub Releases 或 Gitee 镜像获取。下载页始终指向 <b>releases/latest</b>，发新版后无需改链接。</p>
         <h3>如何确认版本</h3>
-        <p>版本标签形如 <b>v1.0.1+4144</b>。Android 的「我的 → 关于」会显示应用版本与构建版本，构建版本应与 Release 标签里的 <b>+构建号</b> 一致。</p>
+        <p>应用内「我的 → 关于」会显示应用版本与构建版本，它们来自安装包本身；Release 标签会带上对应的构建号。两者一致即说明安装的是该版本。</p>
         <h3>不要使用来源不明的安装包</h3>
         <p>第三方站点可能重新签名或植入代码。签名不同会导致无法覆盖安装；即使装上，也可能读取你的课表与登录态。</p>
         <div class="callout tip">
@@ -185,7 +201,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span>海畔 1.0.1</span>
+    <span>海畔</span>
     <span><a href="docs.html">使用文档</a> · <a href="notes.html">注意事项</a> · <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a></span>
   </div>
   <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>

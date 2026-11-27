@@ -37,6 +37,26 @@
     });
   }
 
+  // 窄屏汉堡菜单：与首页一致的整屏收纳方式
+  const menuBtn = $('#menuBtn');
+  const mobileMenu = $('#mobileMenu');
+  if (menuBtn && mobileMenu) {
+    const setMenu = (open) => {
+      menuBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      mobileMenu.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+    };
+    menuBtn.addEventListener('click', () => {
+      setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => setMenu(false));
+    });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    addEventListener('resize', () => { if (innerWidth > 860) setMenu(false); });
+  }
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
