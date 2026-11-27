@@ -7,7 +7,12 @@
 <meta name="description" content="海畔课表 APP 使用须知：非官方声明、账号与设备、数据与隐私、公网通道、使用边界、下载安全与反馈方式。">
 <link rel="icon" type="image/png" href="assets/app-icon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<link rel="stylesheet" href="assets/pages.css?v=4145">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts：思源黑体 / 思源宋体；非阻塞加载，网络不可用时自动回退到系统字体 -->
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"></noscript>
+<link rel="stylesheet" href="assets/pages.css?v=4148">
 <script>
   try {
     var t = localStorage.getItem('hp-theme');
@@ -26,10 +31,8 @@
   <div class="nav">
     <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.png" alt=""><b>海畔</b></a>
     <nav class="links" aria-label="主导航">
-      <a href="index.html#features">功能</a>
-      <a href="index.html#network">网络</a>
-      <a href="docs.html">使用文档</a>
-      <a href="notes.html" aria-current="page">注意事项</a>
+      <a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>使用文档</a>
+      <a href="notes.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.8 20h18.4Z"/><path d="M12 9v4M12 17h.01"/></svg>注意事项</a>
     </nav>
     <div class="tools">
       <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
@@ -49,8 +52,6 @@
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="m-nav" aria-label="移动端导航">
-    <a href="index.html#features"><span>功能</span><small aria-hidden="true">FEATURES</small></a>
-    <a href="index.html#network"><span>网络</span><small aria-hidden="true">NETWORK</small></a>
     <a href="docs.html"><span>使用文档</span><small aria-hidden="true">GUIDE</small></a>
     <a href="notes.html" aria-current="page"><span>注意事项</span><small aria-hidden="true">NOTICE</small></a>
     <a href="index.html#download"><span>下载</span><small aria-hidden="true">DOWNLOAD</small></a>
@@ -119,6 +120,7 @@
           <dt>服务端保存</dt><dd>学号、设备公钥、APP 准入名单、运行配置与必要的使用统计，用于设备认证、准入校验和入口下发。</dd>
           <dt>不会上传</dt><dd>教务密码、成绩明细、考试座位、身份证件、通讯录、相册，以及未主动导出的运行日志。</dd>
           <dt>日志</dt><dd>日志默认保存在本机，学号等长数字串会脱敏。只有你在意见反馈中主动导出并发送时，日志才会离开设备。</dd>
+          <dt>情侣课表</dt><dd>配对与同步仅在局域网内完成，不上传服务器；只交换课名、时间、地点与周次，不含学号、姓名、教师与成绩。</dd>
           <dt>权限用途</dt><dd>通知与闹钟用于课程/考试提醒；网络用于访问教务与通道；相册仅在你选择背景图片时读取选中的图片。</dd>
         </dl>
         <div class="callout tip">
@@ -220,7 +222,7 @@
     <span>海畔</span>
     <span><a href="docs.html">使用文档</a> · <a href="notes.html">注意事项</a> · <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a></span>
   </div>
-  <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>
+  <p class="powered">Powered By XIUHONG</p>
 </footer>
 
 <script src="assets/pages.js?v=4145"></script>

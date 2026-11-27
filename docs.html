@@ -4,10 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>使用文档 · 海畔</title>
-<meta name="description" content="海畔课表 APP 使用文档：安装更新、首次登录、课表、成绩与考试、空教室、提醒与校外访问。">
+<meta name="description" content="海畔课表 APP 使用文档：安装更新、首次登录、课表与情侣课表、成绩与考试、空教室、提醒与组件、本地占用与校外访问。">
 <link rel="icon" type="image/png" href="assets/app-icon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<link rel="stylesheet" href="assets/pages.css?v=4145">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts：思源黑体 / 思源宋体；非阻塞加载，网络不可用时自动回退到系统字体 -->
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"></noscript>
+<link rel="stylesheet" href="assets/pages.css?v=4148">
 <script>
   try {
     var t = localStorage.getItem('hp-theme');
@@ -26,10 +31,8 @@
   <div class="nav">
     <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.png" alt=""><b>海畔</b></a>
     <nav class="links" aria-label="主导航">
-      <a href="index.html#features">功能</a>
-      <a href="index.html#network">网络</a>
-      <a href="docs.html" aria-current="page">使用文档</a>
-      <a href="notes.html">注意事项</a>
+      <a href="docs.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>使用文档</a>
+      <a href="notes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.8 20h18.4Z"/><path d="M12 9v4M12 17h.01"/></svg>注意事项</a>
     </nav>
     <div class="tools">
       <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
@@ -49,8 +52,6 @@
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="m-nav" aria-label="移动端导航">
-    <a href="index.html#features"><span>功能</span><small aria-hidden="true">FEATURES</small></a>
-    <a href="index.html#network"><span>网络</span><small aria-hidden="true">NETWORK</small></a>
     <a href="docs.html" aria-current="page"><span>使用文档</span><small aria-hidden="true">GUIDE</small></a>
     <a href="notes.html"><span>注意事项</span><small aria-hidden="true">NOTICE</small></a>
     <a href="index.html#download"><span>下载</span><small aria-hidden="true">DOWNLOAD</small></a>
@@ -67,7 +68,7 @@
       <div class="crumbs"><a href="index.html">海畔</a><span>/</span><span>使用文档</span></div>
       <span class="kicker">GUIDE</span>
       <h1>海畔使用文档</h1>
-      <p class="lead">对应海畔 Android 当前发布版本。本文按安装、登录、课表、成绩与考试、空教室、提醒、校外访问的顺序，说明各项功能的实际行为与限制。</p>
+      <p class="lead">对应海畔 Android 当前发布版本。本文按安装、登录、课表与情侣课表、成绩与考试、空教室、提醒与组件、校外访问的顺序，说明各项功能的实际行为与限制。</p>
       <div class="chips"><span>Android</span><span>8 个章节</span><span>离线可用</span></div>
     </div>
   </section>
@@ -131,6 +132,16 @@
         <p>点击课程卡片可以查看课程名、教师、教室、节次、周次与课程性质。没有固定节次的实践课会单独列在课表下方，不会强行放入网格。同一门课在整张课表中保持固定颜色，切换学期后重新分配。</p>
         <h3>离线缓存</h3>
         <p>每个学期的课表独立缓存。成功加载一次后，断网或会话过期时仍能打开最近一次结果；下拉刷新会先展示缓存，再在后台同步在线数据。切换账号会清空课表缓存，避免不同账号的数据混在一起。</p>
+        <h3>情侣课表</h3>
+        <p>在「我的 → 情侣课表」生成 6 位配对码，让对方在同一 Wi-Fi 或热点下输入即可完成本地配对。配对与同步均在局域网内完成，不经过服务器，只交换课名、时间、地点与周次，不包含学号、姓名、教师与成绩。</p>
+        <p>配对后，课表首页会出现「我 / TA / 合看」三态切换。TA 的课程使用中等粉色填充并带爱心标记；合看时，双方同一时段都有课会在我方卡片上标爱心，点爱心卡片可以查看同一时段双方的节次、钟点与地点。对方课表超过 7 天未同步时会整体淡化提示。</p>
+        <p>课程色块按首次出现顺序依次分配，不是随机颜色；同一门课在整张课表里保持同色。粉色专供情侣课表，普通课程不会分配到粉色。</p>
+        <div class="callout warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
+          <div><b>Beta 功能</b><br>情侣课表稳定性仍在测试。部分路由器开启 AP 隔离时无法互相发现，可改用手机热点；解除配对后需要重新生成配对码。</div>
+        </div>
+        <h3>本地占用</h3>
+        <p>「设置 → 本地占用」按课表缓存、成绩/考试缓存、设置与配对、登录会话、日志、背景图片、网页数据、系统缓存与其他文件分类统计，并支持清除日志与离线缓存。</p>
         <div class="callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg>
           <div><b>课程提醒</b><br>课表同步后会按本地缓存排程上课提醒。提醒时间与开关在「设置 → 提醒」中调整，断网状态下也能触发。</div>
@@ -172,7 +183,7 @@
         <h3>上课与考试提醒</h3>
         <p>提醒在课表同步后按本地缓存排程，断网也能触发。点击通知会直接打开对应课程或考试。上课与考试的提前时间可以分别调整；系统省电策略可能造成延迟，建议把海畔加入电池优化白名单。</p>
         <h3>桌面组件</h3>
-        <p>提供「今日课表」与「课表 + 考试」两种组件。添加方式与普通 Android 组件一致：长按桌面空白处 → 组件 → 海畔。组件数据由应用同步写入，打开一次应用即可刷新。</p>
+        <p>提供「今日课表」与「课表 + 考试」两种组件，支持半透明液态玻璃底、日期与标题同行、课程起止时间、正在上课的下课倒计时；已结束课程会自动移除。各节上课/下课时间可在「设置 → 课程时间」中修改，修改后课表、提醒与组件同时生效。添加方式与普通 Android 组件一致：长按桌面空白处 → 组件 → 海畔。组件数据由应用同步写入，打开一次应用即可刷新。</p>
         <div class="callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg>
           <div><b>组件不刷新时</b><br>先打开一次应用，让课表与考试完成同步。部分系统会限制后台组件刷新，重新添加组件通常可以恢复。</div>
@@ -245,7 +256,7 @@
     <span>海畔</span>
     <span><a href="docs.html">使用文档</a> · <a href="notes.html">注意事项</a> · <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a></span>
   </div>
-  <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>
+  <p class="powered">Powered By XIUHONG</p>
 </footer>
 
 <script src="assets/pages.js?v=4145"></script>
