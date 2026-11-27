@@ -15,8 +15,8 @@
   --glass: rgba(255, 255, 255, .62);
   --glass-line: rgba(30, 44, 53, .08);
   --shadow: 0 40px 80px -66px rgba(30, 44, 53, .7);
-  --sans: "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  --serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+  --sans: "HarmonyOS Sans SC", "MiSans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --serif: "Songti SC", "STZhongsong", "Source Han Serif SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
   --max: 1140px;
   --ease: cubic-bezier(.22, .68, .16, 1);
 }
