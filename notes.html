@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>注意事项 · 海畔</title>
-<meta name="description" content="海畔课表 APP 注意事项：非官方声明、账号与设备绑定、数据与隐私、公网通道、使用边界与下载安全。">
+<meta name="description" content="海畔课表 APP 使用须知：非官方声明、账号与设备、数据与隐私、公网通道、使用边界、下载安全与反馈方式。">
 <link rel="icon" type="image/png" href="assets/app-icon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/pages.css?v=4145">
 <script>
   try {
     var t = localStorage.getItem('hp-theme');
@@ -26,7 +26,8 @@
   <div class="nav">
     <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.png" alt=""><b>海畔</b></a>
     <nav class="links" aria-label="主导航">
-      <a href="index.html">首页</a>
+      <a href="index.html#features">功能</a>
+      <a href="index.html#network">网络</a>
       <a href="docs.html">使用文档</a>
       <a href="notes.html" aria-current="page">注意事项</a>
     </nav>
@@ -48,12 +49,14 @@
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="m-nav" aria-label="移动端导航">
-    <a href="index.html"><span>首页</span><small aria-hidden="true">HOME</small></a>
+    <a href="index.html#features"><span>功能</span><small aria-hidden="true">FEATURES</small></a>
+    <a href="index.html#network"><span>网络</span><small aria-hidden="true">NETWORK</small></a>
     <a href="docs.html"><span>使用文档</span><small aria-hidden="true">GUIDE</small></a>
     <a href="notes.html" aria-current="page"><span>注意事项</span><small aria-hidden="true">NOTICE</small></a>
+    <a href="index.html#download"><span>下载</span><small aria-hidden="true">DOWNLOAD</small></a>
   </nav>
   <div class="m-foot">
-    <span>海畔 · Android 客户端</span>
+    <span>海畔 · 课表 APP</span>
     <a href="https://github.com/QingYu327/HaiPan" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div>
@@ -63,8 +66,8 @@
     <div class="wrap reveal">
       <div class="crumbs"><a href="index.html">海畔</a><span>/</span><span>注意事项</span></div>
       <span class="kicker">NOTICE</span>
-      <h1>用之前，<br>先看清这些边界。</h1>
-      <p class="lead">海畔是非官方开源项目，不是学校官方产品。账号、隐私、公网通道与下载安全，都在这里说明白。</p>
+      <h1>使用须知</h1>
+      <p class="lead">海畔是非官方开源项目。开始使用前，请先了解账号、数据、公网通道与分发方面的规则；这些约定同样适用于后续版本。</p>
       <div class="chips"><span>非官方</span><span>开源</span><span>个人学习用途</span></div>
     </div>
   </section>
@@ -86,11 +89,12 @@
       <section class="doc-section" id="unofficial">
         <div class="sec-k">01</div>
         <h2>非官方声明</h2>
-        <p>海畔是个人开发的开源课表工具，<b>与广东海洋大学及学校任何部门没有隶属关系</b>。应用不冒充官方服务，也不代表学校发布任何通知。</p>
-        <p>应用读取的课表、成绩、考试与空教室数据，均来自你本人登录学校教务系统后可见的内容。数据所有权归学校与原作者，海畔只做本地整理与展示。</p>
+        <p>海畔是个人开发并开源的课表工具，<b>与广东海洋大学及学校任何部门没有隶属关系</b>。应用不冒充官方服务，也不代表学校发布通知或解释教务政策。</p>
+        <p>应用展示的课表、成绩、考试与空教室数据，均来自你本人登录学校教务系统后可见的内容。数据所有权归学校及原作者，海畔只做本地整理与展示，不改变教务系统的原始记录。</p>
+        <p>教务系统改版、接口调整或学校政策变化，都可能导致部分功能暂时不可用。这类情况属于第三方系统变更带来的正常风险，应用会尽量适配，但不承诺始终可用。</p>
         <div class="callout warn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
-          <div><b>以教务系统为准</b><br>课表调整、考试变更、成绩复核等，请以学校教务系统与学院通知为准。应用展示结果仅供参考。</div>
+          <div><b>以教务系统为准</b><br>课表调整、考试变更、成绩复核等事项，请以学校教务系统和学院通知为准。应用展示结果仅供参考。</div>
         </div>
       </section>
 
@@ -98,88 +102,100 @@
         <div class="sec-k">02</div>
         <h2>账号与设备</h2>
         <h3>一人一号，默认绑定设备</h3>
-        <p>首次登录会把学号与当前设备绑定，用于防止学号被他人冒用。正常换机重新登录会自动换绑；管理员也可以关闭自动换绑，此时需要先退出旧设备或联系管理员重置。</p>
-        <h3>不要把账号交给别人</h3>
-        <p>海畔不会向你索取验证码、密码或远程协助。任何人以「帮你开通公网通道」「帮你修登录」为由索要这些信息，都应直接拒绝。</p>
+        <p>首次登录会把学号与当前设备的密钥绑定，用于减少学号被他人冒用的情况。私钥由 Android Keystore 生成并保存在本机，服务端只登记公钥。正常换机后重新登录可以自动换绑，旧设备会话随即失效。</p>
+        <p>管理员可以关闭自动换绑。关闭后，换机需要先在旧设备退出登录，或联系管理员重置设备绑定。清除应用数据也会销毁本机密钥，需要重新完成绑定。</p>
+        <h3>不要共享账号</h3>
+        <p>海畔不会向你索取密码、验证码或远程协助。任何人以「帮你开通公网通道」「帮你修复登录」为由索要这些信息，都应直接拒绝。转借账号可能导致设备冲突、会话失效，甚至被移出准入名单。</p>
         <h3>公共设备记得退出</h3>
-        <p>在他人手机或公共设备上登录后，请从「我的 → 退出登录」退出，并清除本地缓存，避免课表与学籍信息留在设备上。</p>
+        <p>在他人手机或公共设备上登录后，请从「我的 → 退出登录」退出，并清除本地缓存，避免课表、学籍与成绩信息留在设备上。</p>
       </section>
 
       <section class="doc-section" id="privacy">
         <div class="sec-k">03</div>
         <h2>数据与隐私</h2>
-        <p>海畔不保存你的教务密码，也不会上传成绩单、课表全文或身份证件。需要经过服务端的内容只有设备认证与准入判断所需的最少信息。</p>
+        <p>海畔不保存你的教务密码，也不会上传成绩单全文、考试座位、身份证件、通讯录或相册。需要经过服务端的内容，仅限设备认证、准入判断和基础运行统计所需的最少信息。</p>
         <dl class="kv">
-          <dt>本机保存</dt><dd>课表缓存、设置、登录会话；敏感凭据使用系统 Keystore 加密保存。</dd>
-          <dt>服务端保存</dt><dd>学号、设备公钥、APP 准入名单与运行配置，用于设备认证、准入校验和更新检查。</dd>
-          <dt>不会上传</dt><dd>教务密码、成绩明细、考试座位、身份证件、通讯录与相册。</dd>
-          <dt>日志</dt><dd>主要用于排查故障；导出反馈前请自行确认内容，避免附带无关个人信息。</dd>
+          <dt>本机保存</dt><dd>课表、成绩、考试与学业缓存，应用设置，教务会话 Cookie；令牌等敏感数据使用系统安全存储保存。</dd>
+          <dt>服务端保存</dt><dd>学号、设备公钥、APP 准入名单、运行配置与必要的使用统计，用于设备认证、准入校验和入口下发。</dd>
+          <dt>不会上传</dt><dd>教务密码、成绩明细、考试座位、身份证件、通讯录、相册，以及未主动导出的运行日志。</dd>
+          <dt>日志</dt><dd>日志默认保存在本机，学号等长数字串会脱敏。只有你在意见反馈中主动导出并发送时，日志才会离开设备。</dd>
+          <dt>权限用途</dt><dd>通知与闹钟用于课程/考试提醒；网络用于访问教务与通道；相册仅在你选择背景图片时读取选中的图片。</dd>
         </dl>
         <div class="callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div><b>最小化原则</b><br>如果你不希望学号出现在任何服务端记录中，请不要使用公网通道，并在校园网内使用后退出登录。</div>
+          <div><b>最小化原则</b><br>如果希望进一步减少服务端记录，可以只在校园网内使用，不申请公网通道，并在使用后退出登录、清理本地缓存。</div>
         </div>
       </section>
 
       <section class="doc-section" id="network">
         <div class="sec-k">04</div>
         <h2>公网通道</h2>
-        <p>公网通道是为了让校外网络也能访问校内教务而设置的中转链路。它默认关闭，只对管理员加入准入名单的学号开放。</p>
+        <p>公网通道用于在校外访问校内教务，是一条按学号授权的加密中转链路。通道默认关闭，只有管理员加入准入名单的学号才能使用。</p>
         <ol class="steps">
-          <li><b>先确认必要性</b><span>能连校园网时优先用校园网，直连更快，也不占用公网通道资源。</span></li>
-          <li><b>联系管理员开通</b><span>提供学号即可，不需要密码或验证码。管理员可随时撤销准入。</span></li>
-          <li><b>接受速度差异</b><span>公网通道受中转链路与校园网出口影响，首次加载可能明显慢于校内直连。</span></li>
+          <li><b>先判断是否需要</b><span>能连接校园网时优先使用校园网。直连速度更快，也不占用通道资源。</span></li>
+          <li><b>联系管理员开通</b><span>提供学号即可，不需要密码或验证码。管理员可以随时撤销准入或暂停通道服务。</span></li>
+          <li><b>接受速度差异</b><span>通道受中转链路和学校出口影响，首次加载和翻页可能明显慢于校内直连。</span></li>
         </ol>
+        <p>通道只解决网络可达性，不替代学校统一身份认证。校外登录仍可能需要完成短信、企业微信等多因子验证；验证失败时，请回到校园网完成登录。</p>
         <div class="callout warn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v10"/><circle cx="12" cy="19" r="1"/></svg>
-          <div><b>不要共享通道</b><br>准入名单按学号绑定，转借账号或代他人登录可能导致设备冲突、会话失效，甚至被移出名单。</div>
+          <div><b>不要共享通道</b><br>准入名单按学号绑定。转借账号、代他人登录或高频请求，可能导致设备冲突、会话失效，管理员也有权将相关学号移出名单。</div>
         </div>
       </section>
 
       <section class="doc-section" id="boundaries">
         <div class="sec-k">05</div>
         <h2>使用边界</h2>
-        <p>海畔面向个人日常学习使用。以下行为不在允许范围内：</p>
+        <p>海畔面向个人日常学习使用。以下行为不在允许范围内，管理员有权采取撤销准入、重置设备绑定、限制或停止通道服务等措施：</p>
         <ol class="steps">
-          <li><b>商业用途</b><span>不得将应用、数据或服务用于售卖、代查、付费抢课等商业场景。</span></li>
-          <li><b>批量抓取</b><span>不得用脚本高频请求教务或公网通道，影响学校系统与其他同学使用。</span></li>
-          <li><b>绕过限制</b><span>不得尝试绕过准入、设备绑定、频率限制或其他安全措施。</span></li>
-          <li><b>传播篡改包</b><span>不得重新打包、植入广告或修改签名后对外分发。</span></li>
+          <li><b>商业用途</b><span>不得将应用、数据或通道服务用于售卖、代查成绩、付费抢课等商业场景。</span></li>
+          <li><b>高频与批量请求</b><span>不得使用脚本对教务系统或通道发起高频、并发请求。客户端已对多时段查询做限速，绕过限速的请求可能被服务端限流或断开。</span></li>
+          <li><b>绕过安全限制</b><span>不得尝试绕过准入名单、设备绑定、频率限制或其他安全措施。</span></li>
+          <li><b>重新打包分发</b><span>不得重新打包、修改签名、植入广告或二次分发安装包。</span></li>
+          <li><b>违反校规与法律</b><span>不得利用本应用从事违反学校管理规定或所在地区法律法规的行为。</span></li>
         </ol>
-        <p>使用应用时仍需遵守学校的管理规定与所在地区的法律法规。因违规使用造成的后果由使用者自行承担。</p>
+        <p>因违规使用造成的账号风险、服务中断或其他后果，由使用者自行承担。对学校系统造成影响的，还可能面临学校层面的处理。</p>
       </section>
 
       <section class="doc-section" id="download">
         <div class="sec-k">06</div>
         <h2>下载与更新</h2>
-        <p>安装包只从官网、GitHub Releases 或 Gitee 镜像获取。下载页始终指向 <b>releases/latest</b>，发新版后无需改链接。</p>
+        <p>安装包只从官网、GitHub Releases 或 Gitee 镜像获取。下载页固定指向最新正式版本，发版后无需更换链接。</p>
+        <h3>签名与覆盖安装</h3>
+        <p>正式版始终使用同一签名，因此可以直接覆盖安装并保留本地数据。第三方站点重新签名的安装包无法覆盖，即使通过其他方式装上，也可能读取你的登录态与课表数据。</p>
         <h3>如何确认版本</h3>
-        <p>应用内「我的 → 关于」会显示应用版本与构建版本，它们来自安装包本身；Release 标签会带上对应的构建号。两者一致即说明安装的是该版本。</p>
-        <h3>不要使用来源不明的安装包</h3>
-        <p>第三方站点可能重新签名或植入代码。签名不同会导致无法覆盖安装；即使装上，也可能读取你的课表与登录态。</p>
+        <p>「我的 → 关于」显示的应用版本与构建版本来自安装包本身。Release 标签包含对应的构建号，两者一致即表示安装的是该版本。客户端只比较版本号与构建号，不校验 APK 内容哈希。</p>
+        <h3>校验安装包</h3>
+        <p>每个 Release 的说明中都会附 APK 的 SHA-256。需要时可以在电脑上核对摘要后再安装。下载或安装失败时，先确认存储空间、未知来源权限，以及系统是否拦截了安装器。</p>
         <div class="callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div><b>校验摘要</b><br>每个 Release 的说明里都会附 APK 的 SHA-256。需要时可以在电脑上核对后再安装。</div>
+          <div><b>不要使用来源不明的安装包</b><br>来源不明的 APK 可能被植入额外代码。即使功能看起来正常，也可能在后台读取课表、成绩或登录状态。</div>
         </div>
       </section>
 
       <section class="doc-section" id="disclaimer">
         <div class="sec-k">07</div>
         <h2>免责声明</h2>
-        <p>本软件为开源项目，仅供学习研究与个人使用，请勿用于任何商业或非法用途。</p>
-        <p>软件按「现状」提供，不附带任何明示或默示担保。因使用或无法使用本软件产生的任何直接或间接损失，开发者不承担责任。</p>
-        <p>学校教务系统、统一身份认证与校园网络的可用性、数据准确性由学校负责；海畔只做客户端展示，不对第三方系统的变更或中断负责。</p>
-        <p>使用前请确认你已了解并接受上述边界。继续使用即视为同意本页说明。</p>
+        <p>本软件为开源项目，仅供学习研究与个人使用，不得用于商业或非法用途。</p>
+        <p>软件按「现状」提供，不附带任何明示或默示担保，包括但不限于可用性、准确性与特定用途适用性。因使用或无法使用本软件产生的直接或间接损失，开发者不承担责任。</p>
+        <p>学校教务系统、统一身份认证和校园网络的可用性及数据准确性由学校负责。海畔只做客户端展示，不对第三方系统的变更、延迟或中断负责。</p>
+        <p>继续使用即视为你已阅读并接受本页说明。如不同意其中任何一条，请停止使用并卸载应用。</p>
       </section>
 
       <section class="doc-section" id="contact">
         <div class="sec-k">08</div>
         <h2>反馈与联系</h2>
-        <p>遇到问题请优先使用应用内的「我的 → 意见反馈」，它会自动附带机型、系统版本与日志，定位更快。</p>
-        <p>也可以直接发邮件：<a class="inline" href="mailto:xiuhong0327@163.com" data-copy="xiuhong0327@163.com">xiuhong0327@163.com</a>（点击复制）。</p>
+        <p>遇到问题时，优先使用应用内的「我的 → 意见反馈」。它会自动附带机型、系统版本与脱敏后的运行日志，并作为附件填入邮件，定位效率更高。</p>
+        <p>也可以直接发送邮件：<a class="inline" href="mailto:xiuhong0327@163.com" data-copy="xiuhong0327@163.com">xiuhong0327@163.com</a>（点击复制）。</p>
+        <dl class="kv">
+          <dt>建议附上</dt><dd>发生时间、所在页面、操作步骤、预期结果与实际结果，以及当时使用的是校园网还是公网通道。</dd>
+          <dt>版本信息</dt><dd>「我的 → 关于」中的应用版本与构建版本，便于对应到具体发布包。</dd>
+          <dt>日志</dt><dd>可在「调试 → 运行日志」中调整详细级别与保留天数，并导出最近的日志。发送前请确认内容。</dd>
+          <dt>不要发送</dt><dd>密码、验证码、完整身份证号等敏感信息。日志已做脱敏，但仍建议自行检查。</dd>
+        </dl>
         <div class="callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-          <div><b>反馈时请附上</b><br>发生时间、所在页面、操作步骤、预期结果与实际结果。不要在邮件里发送密码或验证码。</div>
+          <div><b>处理节奏</b><br>项目由个人维护，会尽量回复并修复可复现的问题，但无法承诺固定响应时间。涉及教务系统本身的问题，请同时联系学校相关部门。</div>
         </div>
       </section>
     </article>
@@ -207,6 +223,6 @@
   <p class="powered">Powered By XIUHONG &amp; KJCXXH</p>
 </footer>
 
-<script src="assets/pages.js"></script>
+<script src="assets/pages.js?v=4145"></script>
 </body>
 </html>

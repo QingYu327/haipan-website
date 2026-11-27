@@ -54,7 +54,7 @@
       a.addEventListener('click', () => setMenu(false));
     });
     addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-    addEventListener('resize', () => { if (innerWidth > 860) setMenu(false); });
+    addEventListener('resize', () => { if (innerWidth > 980) setMenu(false); });
   }
 
   const io = new IntersectionObserver((entries) => {
